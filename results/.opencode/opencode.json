@@ -1,0 +1,42 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama (local)",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "qwen3.5-agent:9b": {
+          "name": "mdo-agent"
+        }
+      }
+    }
+  },
+  "mcp": {
+    "mdo_agent_deck": {
+      "type": "local",
+      "command": [
+        "docker",
+        "run",
+        "-i",
+        "--rm",
+        "--name",
+        "mdo_agent_deck",
+        "-p",
+        "8001:8001",
+        "-p",
+        "8002:8002",
+        "--mount",
+        "type=bind,src=.,target=/home/dafoamuser/mount",
+        "-w",
+        "/home/dafoamuser/mount",
+        "mdo_agent_deck:latest",
+        "bash",
+        "-lc",
+        "source /home/dafoamuser/dafoam/loadDAFoam.sh && mdo-agent-deck-mcp"
+      ]
+    }
+  }
+}
