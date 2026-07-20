@@ -7,10 +7,8 @@
                 "run",
                 "-i",
                 "--rm",
-                "--name", "mdo_agent_deck",
                 "--platform", "linux/amd64",
-                "-p", "8001:8001",
-                "-p", "8002:8002",
+                "--network", "host",
                 "--mount", "type=bind,src=.,target=/home/dafoamuser/mount",
                 "-w", "/home/dafoamuser/mount",
                 "dafoam/agent:latest",
@@ -18,8 +16,5 @@
                 "source /home/dafoamuser/dafoam/loadDAFoam.sh && mdo-agent-deck-mcp"
             ]
         }
-    },
-    "model": {
-        "name": "gemini-2.5-flash-lite"
     }
 }
