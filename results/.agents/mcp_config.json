@@ -11,7 +11,7 @@
                 "--network", "host",
                 "--mount", "type=bind,src=.,target=/home/dafoamuser/mount",
                 "-w", "/home/dafoamuser/mount",
-                "dafoam/agent:latest",
+                "dafoam/agent:v0.3.10",
                 "bash", "-lc",
                 "source /home/dafoamuser/dafoam/loadDAFoam.sh && mdo-agent-deck-mcp"
             ]
