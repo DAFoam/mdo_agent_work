@@ -1,4 +1,4 @@
 [mcp_servers.mdo_agent_deck]
 command = "bash"
-args = ["-c", ". $DAFOAM_ROOT_PATH/loadDAFoam.sh && export AGENT_DECK_RUN_MODE=HPC && export AGENT_DECK_WORK_DIR=$PWD && mdo-agent-deck-mcp"]
-env_vars = ["DAFOAM_ROOT_PATH", "PWD"]
+args = ["-lc", ". $DAFOAM_ROOT_PATH/loadDAFoam.sh && export AGENT_DECK_RUN_MODE=HPC && export AGENT_DECK_WORK_DIR=$PWD && mdo-agent-deck-mcp"]
+env_vars = ["DAFOAM_ROOT_PATH", "PWD", "LD_LIBRARY_PATH"]

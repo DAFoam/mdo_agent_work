@@ -9,7 +9,8 @@
           ],
           "env": {
             "DAFOAM_ROOT_PATH": "${DAFOAM_ROOT_PATH}",
-            "PWD": "${PWD}"
+            "PWD": "${PWD}",
+            "LD_LIBRARY_PATH": "${LD_LIBRARY_PATH}"
           }
         }
     }
